@@ -2,7 +2,7 @@
   "name": "kdbush",
   "version": "3.0.0",
   "description": "A very fast static 3D index for points based on kd-tree.",
-  "module": "src/index.js",
+  "module": "js/index.js",
   "main": "kdbush.js",
   "jsdelivr": "kdbush.min.js",
   "unpkg": "kdbush.min.js",
@@ -35,7 +35,7 @@
   "files": [
     "kdbush.js",
     "kdbush.min.js",
-    "src"
+    "js"
   ],
   "author": "Vladimir Agafonkin. Extended to 3D by Douglass Turner",
   "license": "ISC"

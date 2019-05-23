@@ -1,7 +1,7 @@
 
-import KDBush from './src/index.js';
+import KDBush from './js/index.js';
 
-import { heapSize, randomPoint3d } from './src/utils.js';
+import { heapSize, randomPoint3d } from './js/utils.js';
 
 const extent = 5e2;
 const points = [];
