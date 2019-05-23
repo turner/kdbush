@@ -1,7 +1,6 @@
 node_modules
 package-lock.json
-
-# kdbush.js
-# kdbush.min.js
+kdbush.js
+kdbush.min.js
 yarn.lock
 /.idea
