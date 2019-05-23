@@ -1,5 +1,5 @@
 
-export default function within(ids, coords, qx, qy, qz, r, nodeSize, axisCount) {
+export function within(ids, coords, qx, qy, qz, r, nodeSize, axisCount) {
     const stack = [0, ids.length - 1, 0];
     const result = [];
     const r2 = r * r;

@@ -1,5 +1,5 @@
 
-export default function range(ids, coords, minX, minY, minZ, maxX, maxY, maxZ, nodeSize, axisCount) {
+export function range(ids, coords, minX, minY, minZ, maxX, maxY, maxZ, nodeSize, axisCount) {
     const stack = [0, ids.length - 1, 0];
     const result = [];
 

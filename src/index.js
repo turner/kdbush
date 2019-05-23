@@ -1,9 +1,10 @@
 
-import sort from './sort';
-import range from './range';
-import within from './within';
+import { sortKD } from './sort.js';
+import { range } from './range.js';
+import { within } from './within.js';
 
-export default class KDBush {
+class KDBush {
+
     constructor({ points, getX, getY, getZ, nodeSize, ArrayType, axisCount }) {
         this.nodeSize = nodeSize;
         this.points = points;
@@ -23,7 +24,7 @@ export default class KDBush {
         }
 
         // kd-sort both arrays for efficient search (see comments in sort.js)
-        sort(ids, coords, nodeSize, 0, ids.length - 1, 0, axisCount);
+        sortKD(ids, coords, nodeSize, 0, ids.length - 1, 0, axisCount);
 
     }
 
@@ -35,3 +36,5 @@ export default class KDBush {
         return within(this.ids, this.coords, x, y, z, r, this.nodeSize, this.axisCount);
     }
 }
+
+export default KDBush;

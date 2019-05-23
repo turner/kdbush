@@ -1,6 +1,9 @@
 
-export default function sortKD(ids, coords, nodeSize, left, right, axis, axisCount) {
-    if (right - left <= nodeSize) return;
+export function sortKD(ids, coords, nodeSize, left, right, axis, axisCount) {
+
+    if (right - left <= nodeSize) {
+        return;
+    }
 
     const m = (left + right) >> 1; // middle index
 
@@ -24,8 +27,10 @@ function select(ids, coords, k, left, right, axis, axisCount) {
             const z = Math.log(n);
             const s = 0.5 * Math.exp(2 * z / 3);
             const sd = 0.5 * Math.sqrt(z * s * (n - s) / n) * (m - n / 2 < 0 ? -1 : 1);
+
             const newLeft = Math.max(left, Math.floor(k - m * s / n + sd));
             const newRight = Math.min(right, Math.floor(k + (n - m) * s / n + sd));
+
             select(ids, coords, k, newLeft, newRight, axis, axisCount);
         }
 
@@ -34,7 +39,10 @@ function select(ids, coords, k, left, right, axis, axisCount) {
         let j = right;
 
         swapItem(ids, coords, left, k, axisCount);
-        if (coords[axisCount * right + axis] > t) swapItem(ids, coords, left, right, axisCount);
+
+        if (coords[axisCount * right + axis] > t) {
+            swapItem(ids, coords, left, right, axisCount);
+        }
 
         while (i < j) {
             swapItem(ids, coords, i, j, axisCount);
@@ -44,8 +52,9 @@ function select(ids, coords, k, left, right, axis, axisCount) {
             while (coords[axisCount * j + axis] > t) j--;
         }
 
-        if (coords[axisCount * left + axis] === t) swapItem(ids, coords, left, j, axisCount);
-        else {
+        if (coords[axisCount * left + axis] === t) {
+            swapItem(ids, coords, left, j, axisCount);
+        } else {
             j++;
             swapItem(ids, coords, j, right, axisCount);
         }
